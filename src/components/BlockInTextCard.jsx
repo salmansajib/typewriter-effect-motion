@@ -1,4 +1,3 @@
-import React from "react";
 import TypewriteText from "./TypewriteText";
 
 function BlockInTextCard({ tag, text, examples }) {
