@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 const LETTER_DELAY = 0.025;
@@ -28,6 +29,7 @@ function TypewriteText({ examples }) {
         EXAMPLE:{" "}
         {examples[exampleIndex].split("").map((letter, index) => {
           return (
+            // Wrap each letter in a span to animate them individually
             <motion.span
               initial={{
                 opacity: 1,
@@ -43,6 +45,7 @@ function TypewriteText({ examples }) {
               className="relative"
               key={`${exampleIndex}-${index}`}
             >
+              {/* letters */}
               <motion.span
                 initial={{
                   opacity: 0,
@@ -57,6 +60,7 @@ function TypewriteText({ examples }) {
               >
                 {letter}
               </motion.span>
+              {/* block */}
               <motion.span
                 initial={{
                   opacity: 0,
